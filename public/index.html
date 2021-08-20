@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <title>My app productos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+  </head>
+
+<body>
+<h1>INGRESO DE PRODUCTOS</h1>
+<!-- <form action="/api/productos/guardar" method="post"> -->
+  <form  onsubmit="return sendData(this)" >
+  <ul>
+    <li>
+      <label for="name">Title:</label>
+      <input 
+      type='text'
+      id='title'
+      name='title'
+      class='form-control'
+      placeholder='Producto'
+      aria-label='Producto'
+      required
+      />
+    </div>
+    <div class="form-group">
+    </li>
+    <li>
+      <label for="name">Price:</label>
+      <input 
+      type='number'
+      id='price'
+      name='price'
+      class='form-control'
+      placeholder='$'
+      aria-label='Precio'
+      required
+      />
+    </li>
+    <li>
+      <label for="name">Thumbnail:</label>
+      <input
+        type='text'
+        id='thumbnail'
+        name='thumbnail'
+        class='form-control'
+        placeholder='Image URL'
+        required
+      />
+    </li>
+    <li class="btn btn-default">
+      <button type="submit" class="btn btn-default">Guardar</button>
+    </li>
+  </ul>
+</form>
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <td>Producto</td>
+          <td>Precio</td>
+          <td>Thumbnail</td>
+      </tr>
+  </thead>
+</table>
+<table class="table table-striped">
+  <tbody 
+  id="lista">
+  </tbody>
+</table>
+</div>
+</div></div>
+<div class="chatContainer">
+    <form id="chatform">
+        <label>Mensaje
+            <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+        </label>
+        <label>Email
+            <input id="email" type="email"></input>
+        </label>
+        <button type="submit" class="btn btn-primary button">Send</button>
+    </form>
+    <div class="chat" id="chat"></div>
+</div>
+</div>
+ 
+<script src="/socket.io/socket.io.js"></script>
+<script src="main.js"></script> 
+</body>
+</html>

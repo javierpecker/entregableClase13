@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+thead {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <title>show products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  </head>
+{{#if productos.length }}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Producto</td>
+            <td>Precio</td>
+            <td>Thumbnail</td>
+        </tr>
+    </thead>
+    <tbody>
+        <div>
+            {{#each productos}}
+            <tr>
+
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td><img style="width: 100px" src="{{this.thumbnail}}"></img>
+                </td>
+            </tr>
+            {{/each}}
+        </div>
+    </tbody>
+</table>
+
+{{else}}
+<p>No hay productos</p>
+{{/if}}
+
+
+

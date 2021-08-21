@@ -41,7 +41,6 @@ socket.on("message", (chat) => {
                  <div class="chatmensaje">${mensaje.mensaje}</div>
                  <div class="chatfecha">date:${mensaje.fecha}</div>
                  </li>
-
               </div>`;
     })
     .join(" ");

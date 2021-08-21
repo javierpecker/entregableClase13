@@ -11,7 +11,7 @@
 <body>
 <h1>INGRESO DE PRODUCTOS</h1>
 <!-- <form action="/api/productos/guardar" method="post"> -->
-  <form  onsubmit="return sendData(this)" >
+  <form class= "onsubmit="return sendData(this)" >
   <ul>
     <li>
       <label for="name">Title:</label>
@@ -74,14 +74,26 @@
 <div class="chatContainer">
     <form id="chatform">
         <label>Mensaje
-            <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+            <input 
+            id="msg" 
+            type="text" 
+            placeholder="Enter Message" 
+            required autocomplete="off" />
         </label>
         <label>Email
-            <input id="email" type="email"></input>
+            <input 
+            id="email" 
+            type="email"
+            placeholder="email">
+          </input>
         </label>
-        <button type="submit" class="btn btn-primary button">Send</button>
+        <button 
+        type="submit" 
+        class="btn btn-primary button">Send</button>
     </form>
-    <div class="chat" id="chat"></div>
+    <div 
+    class="chat" 
+    id="chat"></div>
 </div>
 </div>
  

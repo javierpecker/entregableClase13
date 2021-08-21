@@ -32,6 +32,18 @@ label{
   top: 0%;
   @include translateY(-50%);
 }
+.chatContainer{
+  width:500px;
+  padding:40px 30px;
+  background:#eee;
+  @include border-radius(4px);
+  margin:auto;
+  position: absolute;
+  left: 100;
+  right: 0;
+  top: 0%;
+  @include translateY(-50%);
+}
 .form-group{
   position: relative;
   margin-bottom:1px;

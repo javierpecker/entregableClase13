@@ -41,28 +41,26 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', routerRead);
 
-//Esta funcion se encarga de leer y devolver los mensajes de existir el archivo de mensajes.
 const readfile = () => {
-  let filenames = fs.readdirSync("./");
-  const found = filenames.find((element) => "chat.txt" === element);
-  if (found === "chat.txt") {
-    const data = fs.readFileSync("./chat.txt", "utf-8");
+  let filenames = fs.readdirSync("./persistentdata");
+  const found = filenames.find((element) => "messages.txt" === element);
+  if (found === "messages.txt") {
+    const data = fs.readFileSync("./persistentdata/messages.txt", "utf-8");
     return data;
   } else {
     console.log("Archivo no leido");
   }
 };
 
-// Esta función guarda el array de mensajes en un archivo con formato JSON
 const guardarMessages = (messages) => {
   fs.writeFileSync(
-    "./chat.txt",
+    "./persistentdata/messages.txt",
     JSON.stringify(messages, undefined, 2),
     "utf-8"
   );
 };
 
-//Funcion que guarda mensaje en archivo
+
 const guardarNewMessage = (data) => {
   let messages = JSON.parse(readfile());
   let now = new Date();
@@ -97,7 +95,6 @@ myWSServer.on('connection', (socket) => {
   socket.on("chatMessage", (chat) => {
     guardarNewMessage(chat);
     const chatfile = readfile();
-    //Envio del chat a los usuarios
     socket.emit("message", chatfile);
     socket.broadcast.emit("message", chatfile);
   });

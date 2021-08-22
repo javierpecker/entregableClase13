@@ -36,11 +36,10 @@ socket.on("message", (chat) => {
   const html = chatparse
     .map((mensaje) => {
       return `<div>
-                <li>
-                 <div class="chatemail">${mensaje.email} dice: </div>
-                 <div class="chatmensaje">${mensaje.mensaje}</div>
-                 <div class="chatfecha">date:${mensaje.fecha}</div>
-                 </li>
+                 <div class="">${mensaje.fecha} ${mensaje.email} dice: </div>
+                 <div class="">${mensaje.mensaje}</div>
+                 <div class="">---------------------- </div>
+                 <div class="">---------------------- </div>
               </div>`;
     })
     .join(" ");
